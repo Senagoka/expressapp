@@ -1,32 +1,32 @@
-const student = require("");
-const students = require("../demydata");
+
+const students = require("../studentsname");
 
 // get All students
 const getAllstudents = (req, res) => {
     res.json(students);
 };
 
-// get a single products
-const getAproduct = (req, res) => {
+// get a single students
+const getAstudent = (req, res) => {
     const age = req.params.age;
     const students = students.some((p) => p.age === age);
 
     if (students) {
-        res.json(students.filter((student) => products.age === age));
+        res.json(students.filter((student) => student.age === age));
     } else {
         res.ststus(404).filter({ message: "not found" });
     }
 };
 
-// delete a single products
+// delete a single student
 
-const deleteStudents = (req, res) => {
+const deleteAstudent = (req, res) => {
     const age = req.params.age;
     const students = students.some((p) => p.age === age);
     
     if (students) {
       res.json({
-        msg: `students delete ${age}`,
+        msg: `student deleted ${age}`,
         students: students.filter((p) => p.age !== age),
       });
     }
@@ -48,7 +48,7 @@ const createStudents = (req, res) => {
 
 // update students
 
-const updateproducts = (req, res) => {
+const updateStudents = (req, res) => {
     const name = req.params.name;
     const students = students.some((p) => p.name === name);
 
@@ -68,8 +68,8 @@ const updateproducts = (req, res) => {
 
 module.exports = {
   getAllstudents,
-  getAstudents,
+  getAstudent,
   deleteAstudent,
   createStudents,
-  updateAstudents,
+  updateStudents,
 };

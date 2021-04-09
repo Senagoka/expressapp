@@ -1,6 +1,9 @@
 const express = require("express");
-const students = require("./demydata");
+
+const students = require("./studentsname");
+
 const app = express();
+
 // home route
 app.get("/", (req, res) => {
   res.send("welcome to our students api");
